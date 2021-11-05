@@ -34,7 +34,7 @@
             
         <a-plane position="0 0 0" rotation="0 0 0" width="1" height="1" color="blue"></a-plane>
 
-        <a-marker-camera 
+        <a-marker 
                          type="pattern" 
                          preset="custom" 
                          smooth=true 
@@ -46,9 +46,9 @@
                       gltf-model="#animated-asset"
                       animation-mixer="loop: repeat" >
             </a-entity>
-        </a-marker-camera>
+        </a-marker>
         
-        <a-marker-camera 
+        <a-marker 
                          type="pattern" 
                          preset="custom" 
                          smooth=true 
@@ -60,7 +60,7 @@
                       gltf-model="#animated-asset"
                       animation-mixer="loop: repeat" >
             </a-entity>
-        </a-marker-camera>
+        </a-marker>
 
         <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
         <a-entity camera></a-entity>
