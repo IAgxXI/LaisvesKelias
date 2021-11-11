@@ -15,12 +15,32 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <a-text
-        value="This content will always face you."
-        look-at="[gps-camera]"
-        scale="120 120 120"
-        gps-entity-place="latitude: 56.2046905028409; longitude: 24.75355345755816;"
-      ></a-text>
+      <a-assets>
+                <a-asset-item
+                    id="animated-asset"
+                    src="jokastree.gltf"
+                ></a-asset-item>
+            </a-assets>
+
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="pattern-EglesQRC.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.020862627028828216 0.020862627028828216 0.020862627028828216"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
