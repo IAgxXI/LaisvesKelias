@@ -31,17 +31,31 @@
             <a-asset-item id="jokastree-asset" src="https://iagxxi.github.io/LaisvesKelias/jokastree.gltf"></a-asset-item>
             <a-asset-item id="jokastree-asset2" src="https://iagxxi.github.io/LaisvesKelias/jokastree2.gltf"></a-asset-item>
             <a-asset-item id="Egle_MAIN" src="https://iagxxi.github.io/LaisvesKelias/Egle1.gltf"></a-asset-item>
+			
+			<a-asset-item id="1" src="https://iagxxi.github.io/LaisvesKelias/photos/1,1.png"></a-asset-item>
+			<a-asset-item id="2" src="https://iagxxi.github.io/LaisvesKelias/photos/1,2.jpg"></a-asset-item>
+			<a-asset-item id="3" src="https://iagxxi.github.io/LaisvesKelias/photos/2,1.jpg"></a-asset-item>
+			<a-asset-item id="4" src="https://iagxxi.github.io/LaisvesKelias/photos/3,2.jpg"></a-asset-item>
+			<a-asset-item id="5" src="https://iagxxi.github.io/LaisvesKelias/photos/4,1.jpg"></a-asset-item>
+			<a-asset-item id="6" src="https://iagxxi.github.io/LaisvesKelias/photos/5,1.jpg"></a-asset-item>
+			<a-asset-item id="7" src="https://iagxxi.github.io/LaisvesKelias/photos/6,1.jpg"></a-asset-item>
+			<a-asset-item id="8" src="https://iagxxi.github.io/LaisvesKelias/photos/7,2.jpg"></a-asset-item>
+			<a-asset-item id="9" src="https://iagxxi.github.io/LaisvesKelias/photos/8,1.jpg"></a-asset-item>
+			<a-asset-item id="10" src="https://iagxxi.github.io/LaisvesKelias/photos/8,2.jpg"></a-asset-item>
+			<a-asset-item id="11" src="https://iagxxi.github.io/LaisvesKelias/photos/9,1.jpg"></a-asset-item>
+			<a-asset-item id="12" src="https://iagxxi.github.io/LaisvesKelias/photos/10,1.jpg"></a-asset-item>
+			
             
         </a-assets>
             # aaa
         /**<a-plane position="0 0 0" rotation="0 0 0" width="1" height="1" color="blue"></a-plane>**/
 
         <a-marker 
-                         type="pattern" 
-                         preset="custom" 
-                         smooth=true 
-                         url="https://iagxxi.github.io/LaisvesKelias/pattern-EglesQRC.patt"
-                         emitevents="true" >
+            type="pattern" 
+            preset="custom" 
+            smooth=true 
+            url="https://iagxxi.github.io/LaisvesKelias/pattern-EglesQRC.patt"
+            emitevents="true" >
             <a-entity 
                       position="0 0 0" 
                       scale="0.05 0.05 0.05" 
@@ -51,11 +65,11 @@
         </a-marker>
         
         <a-marker 
-                         type="pattern"  
-                         preset="custom" 
-                         smooth=true 
-                         url="https://iagxxi.github.io/LaisvesKelias/pattern-eglesQR.patt"
-                         emitevents="true" >
+            type="pattern"  
+            preset="custom" 
+            smooth=true 
+            url="https://iagxxi.github.io/LaisvesKelias/pattern-eglesQR.patt"
+            emitevents="true" >
             <a-entity 
                       position="0 0 0" 
                       scale="0.05 0.05 0.05" 
@@ -63,7 +77,236 @@
                       animation-mixer="loop: repeat" >
             </a-entity>
         </a-marker>
+		
+		<!-- nuotraukos -->
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-1.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#1"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-2.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#2"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
 
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-3.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#3"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-4.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#4"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-5.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#5"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-6.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#6"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-7.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#7"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-8.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#8"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-9.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#9"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-10.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#10"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-11.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#11"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
+		
+		<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="qrcodes/pattern-12.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#12"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+        </a-marker>
         <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
         <a-entity camera></a-entity>
         </a-scene>
