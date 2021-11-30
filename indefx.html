@@ -16,6 +16,26 @@
             embedded
             gesture-detector
         >
+		
+        <a-assets>
+            <a-asset-item id="Egle_MAIN" src="https://iagxxi.github.io/LaisvesKelias/Egle1.gltf"></a-asset-item> 
+        </a-assets>
+        <!-- <a-plane position="0 0 0" rotation="0 0 0" width="1" height="1" color="blue"></a-plane> -->
+
+        <a-marker 
+            type="pattern" 
+            preset="custom" 
+            smooth=true 
+            url="https://iagxxi.github.io/LaisvesKelias/pattern-EglesQRC.patt"
+            emitevents="true" >
+            <a-entity 
+                      position="0 0 0" 
+                      scale="0.05 0.05 0.05" 
+                      gltf-model="#Egle_MAIN"
+                      animation-mixer="loop: repeat" >
+            </a-entity>
+        </a-marker>
+		
             <a-marker
                 id="animated-marker"
                 type="pattern"
