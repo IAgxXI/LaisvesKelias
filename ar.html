@@ -11,8 +11,6 @@
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-		
-        
     </head>
     
     
@@ -25,29 +23,13 @@
 				 gesture-detector
                  renderer="logarithmicDepthBuffer: true;"
                  id="scene"
-                 arjs='sourceType: webcam; debugUIEnabled: false; trackingMethod: best; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;'>
+                 arjs='sourceType: webcam; debugUIEnabled: false; trackingMethod: best; sourceWidth:1280; sourceHeight:960; '> <!-- displayWidth: 1280; displayHeight: 960; -->
 
         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"></a-asset-item>
             <a-asset-item id="trex-asset" src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"></a-asset-item>
-            <a-asset-item id="jokastree-asset" src="https://iagxxi.github.io/LaisvesKelias/jokastree.gltf"></a-asset-item>
-            <a-asset-item id="jokastree-asset2" src="https://iagxxi.github.io/LaisvesKelias/jokastree2.gltf"></a-asset-item>
+			
             <a-asset-item id="Egle_MAIN" src="https://iagxxi.github.io/LaisvesKelias/Egle1.gltf"></a-asset-item>
-			
-			<a-asset-item id="1" src="https://iagxxi.github.io/LaisvesKelias/photos/1,1.png"></a-asset-item>
-			<a-asset-item id="2" src="https://iagxxi.github.io/LaisvesKelias/photos/1,2.jpg"></a-asset-item>
-			<a-asset-item id="3" src="https://iagxxi.github.io/LaisvesKelias/photos/2,1.jpg"></a-asset-item>
-			<a-asset-item id="4" src="https://iagxxi.github.io/LaisvesKelias/photos/3,2.jpg"></a-asset-item>
-			<a-asset-item id="5" src="https://iagxxi.github.io/LaisvesKelias/photos/4,1.jpg"></a-asset-item>
-			<a-asset-item id="6" src="https://iagxxi.github.io/LaisvesKelias/photos/5,1.jpg"></a-asset-item>
-			<a-asset-item id="7" src="https://iagxxi.github.io/LaisvesKelias/photos/6,1.jpg"></a-asset-item>
-			<a-asset-item id="8" src="https://iagxxi.github.io/LaisvesKelias/photos/7,2.jpg"></a-asset-item>
-			<a-asset-item id="9" src="https://iagxxi.github.io/LaisvesKelias/photos/8,1.jpg"></a-asset-item>
-			<a-asset-item id="10" src="https://iagxxi.github.io/LaisvesKelias/photos/8,2.jpg"></a-asset-item>
-			<a-asset-item id="11" src="https://iagxxi.github.io/LaisvesKelias/photos/9,1.jpg"></a-asset-item>
-			<a-asset-item id="12" src="https://iagxxi.github.io/LaisvesKelias/photos/10,1.jpg"></a-asset-item>
-			
-            
         </a-assets>
         <!-- <a-plane position="0 0 0" rotation="0 0 0" width="1" height="1" color="blue"></a-plane> -->
 
@@ -64,33 +46,25 @@
                       animation-mixer="loop: repeat" >
             </a-entity>
         </a-marker>
-        
-        <a-marker 
-            type="pattern"  
-            preset="custom" 
-            smooth=true 
-            url="https://iagxxi.github.io/LaisvesKelias/pattern-eglesQR.patt"
-            emitevents="true" >
-            <a-entity 
-                      position="0 0 0" 
-                      scale="0.05 0.05 0.05" 
-                      gltf-model="#animated-asset"
-                      animation-mixer="loop: repeat" >
-            </a-entity>
-        </a-marker>
 		
 		<!-- nuotraukos -->
 		
 		<a-marker
+                id="animated-marker2"
                 type="pattern"
                 preset="custom"
                 url="qrcodes/pattern-1.patt"
+                raycaster="objects: .clickable"
                 emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA2"
             >
                 <a-image
-                    src="https://iagxxi.github.io/LaisvesKelias/photos/1,1.png"
+                    src="https://iagxxi.github.io/LaisvesKelias/photos/1,1.jpg"
                     scale="1 1 1"
+                    class="clickable"
                     rotation="-90 0 0"
+                    gesture-handler
                 ></a-image>
         </a-marker>
 		
