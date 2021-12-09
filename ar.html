@@ -23,7 +23,7 @@
 				 gesture-detector
                  renderer="logarithmicDepthBuffer: true;"
                  id="scene"
-                 arjs='sourceType: webcam; debugUIEnabled: false; trackingMethod: best; sourceWidth:1280; sourceHeight:960; '> <!-- displayWidth: 1280; displayHeight: 960; -->
+                 arjs='sourceType: webcam; debugUIEnabled: true; trackingMethod: best; sourceWidth:1280; sourceHeight:960; '> <!-- displayWidth: 1280; displayHeight: 960; -->
 
         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"></a-asset-item>
@@ -57,7 +57,15 @@
                       scale="0.05 0.05 0.05" 
                       gltf-model="#Egle_MAIN"
                       animation-mixer="loop: repeat" >
+					  
             </a-entity>
+			<a-image
+                    src="https://iagxxi.github.io/LaisvesKelias/photos/1,1.jpg"
+                    scale="2 1.68 2"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
         </a-marker>
 		
 		<!-- nuotraukos -->
