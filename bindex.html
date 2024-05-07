@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html style="font-size: 12px;font-family: Roboto, Arial, sans-serif;" lang="lt-LT">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			
+			jQuery(document).ready(function($){
+				
+				var url = window.location.href;
+				if ( url.includes("marius") == true ) {
+					$(".voko-vidus div img:not(.left, .right)").attr("src","./kviet1/page02.jpg");
+				} else if ( url.includes("jovita") == true ) {
+					$(".voko-vidus div img:not(.left, .right)").attr("src","./kviet1/page03.jpg");
+				} else if ( url.includes("neringa") == true ) {
+					$(".voko-vidus div img:not(.left, .right)").attr("src","./kviet1/page01.jpg");
+				}
+				
+				function animation_position(kas, elementas, nuo_kur, iki_kur, kiek, koks) {
+					$({xyz: nuo_kur}).animate({xyz:iki_kur}, {duration:kiek, complete:function(){
+						console.log("done");
+					}, step: function(now) {
+						$(kas).css(elementas, now+koks);
+					}});
+				}
+				
+				//// Paradiniai var
+				if ($(window).width() > 980) { // -460px - 980
+					var variables = new Map([
+					   ['voko_top_0', 27],['voko_top_1', 47],
+					   ['voko_left_0', 30],['voko_left_1', 17],
+					   ['vidus_top_0', 27],['vidus_top_1', 16],
+					   ['vidus_left_0', 30],['vidus_left_1', 38],
+					]);		
+				} else {
+					var variables = new Map([
+					   ['voko_top_0', 27],['voko_top_1', 20],
+					   ['voko_left_0', 19],['voko_left_1', 20],
+					   ['vidus_top_0', 27],['vidus_top_1', 17],
+					   ['vidus_left_0', 19],['vidus_left_1', 30],
+					]);	
+				}
+				$(".vokas1, .vokas2, .vokas3").css({'top': variables.get('voko_top_0')+'vh', 'left': variables.get('voko_left_0')+'vw'});
+				$(".voko-vidus").css({'top': variables.get('vidus_top_0')+'vh', 'left': variables.get('vidus_left_0')+'vw'});
+				
+				var anim_iter = 0;
+				$("#interaction_trigger").click(function(){
+					if (anim_iter == 0) {
+						$(".vokas3 svg").animate({scale: '-1', top:'-=99.7mm'}, 500, 'linear', function() {
+							$(".vokas3").addClass('plius');
+						});
+						$(".vokas3 g path").attr("style", "fill:#536844;"); //  fill:#536844;
+					}
+					if (anim_iter == 1) {
+						$(".voko-vidus").addClass('plius');
+						//$(".vokas1, .vokas2, .vokas3").css({'top': '27vh', 'left': '25vw'}).animate({scale: '.75', top: '+=20vh', left: '+=20vw'}, 1000, 'linear');
+						//$(".voko-vidus").animate({top: '+=17vh', left: '+=30vw'}, 2000, 'linear');
+						$(".vokas1, .vokas2, .vokas3").animate({scale: '.75'}, 1000, 'linear');
+						animation_position(".vokas1, .vokas2, .vokas3", 'top', variables.get('voko_top_0'), variables.get('voko_top_1'), 2000, 'vh');
+						animation_position(".vokas1, .vokas2, .vokas3", 'left', variables.get('voko_left_0'), variables.get('voko_left_1'), 2000, 'vw');
+						
+						animation_position(".voko-vidus", 'top', variables.get('vidus_top_0'), variables.get('vidus_top_1'), 1000, 'vh');
+						animation_position(".voko-vidus", 'left', variables.get('vidus_left_0'), variables.get('vidus_left_1'), 1000, 'vw');
+					}
+					if (anim_iter == 2) {
+						$(".voko-vidus div .dureles .left, .voko-vidus div .dureles .right").addClass('plius');
+						$(".voko-vidus").animate({scale: '1.2'}, 1000, 'linear');
+					}
+					
+					
+					anim_iter++;
+					console.log("Animacijos iteracija = "+anim_iter);
+				});
+
+			});
+		</script>
+		<style>
+			body {
+				background: rgb(237,237,237);
+				background: radial-gradient(circle, rgba(237,237,237,1) 0%, rgba(255,252,245,1) 38%, rgba(255,252,245,1) 58%, rgba(237,237,237,1) 100%);
+			}
+			.pavadinimas {
+			    position: absolute;
+				color: #000;
+				background: #fff;
+				text-align: center;
+				align-content: center;
+				border-radius: 100px;
+				width: 90px;
+				height: 90px;
+				padding: 10px;
+				top: 60mm;
+				left: 120mm;
+				font-size: 16px;
+				/*font-weight: 700;*/
+				text-transform: uppercase;
+			}
+			.voko-vidus, .vokas1, .vokas2, .vokas3 {z-index: 0;scale: 1;}
+			.vokas3 {z-index: 1;}
+			.vokas3.plius {z-index: 0;}
+			#interaction_trigger {
+				height: 100vh;
+				width: 100vw;
+				/*top: 370px;*/
+				margin-top: auto;
+				margin-left: auto;
+				margin-right: auto;
+				display: grid;
+				align-items: center;
+			}
+			#laiskas_b, #laiskas_f, #laiskas_anim {
+				/* height: 100%;
+				width: 100%; */
+				width: 170mm;
+				height: 100mm;
+				position:absolute;
+				margin-top: auto;
+				transform: rotate(0deg);
+				scale: 1;
+			}
+			#laiskas_anim g path {
+				transition: .5s;
+			}
+			.voko-vidus, .vokas1, .vokas2, .vokas3 {
+				display: grid;
+				position: fixed;
+				/* min-height: 80vh; */
+				/* min-width: 80vw; */
+				top: 27vh; 
+				left: 25vw;
+				transition: .2s;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.voko-vidus {
+				justify-self: center;
+			}
+			.voko-vidus > div {
+				transform: rotate(90deg);
+				width: 95mm;
+				height: 165mm;
+				position: relative;
+				left: 40%;
+				top: -20%;
+			}
+			.voko-vidus div > *{
+				position: absolute;
+				width: 95mm;
+				height: 165mm;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.voko-vidus div .dureles {
+				display: flex;
+			}
+			.voko-vidus div .dureles * {
+			    transform: rotateY(180deg);
+				transition: 1s;
+				width: auto;
+				position: absolute;
+				width: 50%;
+				transition-timing-function: ease-in-out;
+			}
+			.voko-vidus div .dureles .right {
+				left: 50%;
+			}
+			.voko-vidus div .dureles .right.plius {
+				left: 100%;
+				transform: rotateY(360deg);
+			}
+			.voko-vidus div .dureles .left {
+				left: 0%;
+			}
+			.voko-vidus div .dureles .left.plius {
+				left: -50%;
+				transform: rotateY(0deg);
+			}
+			
+			.voko-vidus.plius {
+				transform: rotate(0deg);
+				transition: .5s;
+				z-index: 2;
+				justify-self: center;
+			}
+			.voko-vidus.plius > *{
+				transform: rotate(0deg);
+				transition: .5s;
+				justify-self: center;
+				left: 20%;
+				top: 0%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="interaction_trigger">
+			<div class="vokas1">
+				<svg
+				   width="170.00008mm"
+				   height="100mm"
+				   viewBox="0 0 170.00008 100"
+				   version="1.1"
+				   id="laiskas_b">
+				  <defs
+					 id="defs1" />
+				  <g
+					 inkscape:label="Layer 1"
+					 inkscape:groupmode="layer"
+					 id="layer1">
+					<rect
+					   style="display:inline;fill:#536844;fill-opacity:1;stroke-width:1.05485"
+					   id="rect1"
+					   width="170"
+					   height="100"
+					   x="-5.5511151e-17"
+					   y="-1.3877788e-17"
+					   inkscape:label="Back" />
+				  </g>
+				</svg>
+			</div>
+			<div class="voko-vidus">
+				<div>
+					<img src="./kviet1/page04.jpg"/>
+					<div class="dureles">
+						<img class="left" src="./kviet1/Kvietimo-eukaliptai-1.png"/>
+						<img class="right" src="./kviet1/Kvietimo-eukaliptai-2.png"/>
+					</div>
+				</div>
+			</div>
+			<div class="vokas2" >
+				<svg
+				   width="170.00008mm"
+				   height="100mm"
+				   viewBox="0 0 170.00008 100"
+				   version="1.1"
+				   id="laiskas_f">
+				  <defs
+					 id="defs1" />
+				  <g
+					 inkscape:label="Layer 1"
+					 inkscape:groupmode="layer"
+					 id="layer1">
+					<path
+					   id="rect1-2"
+					   style="fill:#5b724a;fill-opacity:1;stroke-width:1.05485"
+					   inkscape:label="Front_b"
+					   d="M 62.061214,52.271796 H 108.7062 L 170,100 H 0 Z"
+					   sodipodi:nodetypes="ccccc" />
+					<path
+					   id="rect1-8"
+					   style="display:inline;fill:#5e754c;fill-opacity:1;stroke-width:1.05485"
+					   inkscape:label="Front_l"
+					   d="M 0,0 62.066598,52.273413 0,99.999996 Z"
+					   sodipodi:nodetypes="cccc" />
+					<path
+					   id="path1"
+					   style="display:inline;fill:#5e754c;fill-opacity:1;stroke-width:1.05485"
+					   inkscape:label="Front_r"
+					   d="m 170.00007,0 -62.0666,52.273413 62.0666,47.726583 z"
+					   sodipodi:nodetypes="cccc" />
+				  </g>
+				</svg>
+				<div class="pavadinimas">Agnė ir Agnas</div>
+			</div>
+			<div class="vokas3" >
+				<svg
+				   width="170.00008mm"
+				   height="100mm"
+				   viewBox="0 0 170.00008 100"
+				   version="1.1"
+				   id="laiskas_anim">
+				  <defs
+					 id="defs1" />
+				  <g
+					 id="layer1">
+					<path
+					   id="path2"
+					   style="fill:#617a4f;fill-opacity:1;stroke-width:1.05485"
+					   inkscape:label="Front_t"
+					   d="M 85.026107,72.334454 170,0 H 0 Z"
+					   sodipodi:nodetypes="cccc" />
+				  </g>
+				</svg>
+			</div>
+		</div>
+	</body>
+</html>
